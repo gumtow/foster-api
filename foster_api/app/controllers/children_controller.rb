@@ -5,11 +5,14 @@ class ChildrenController < ApplicationController
   # GET /children.json
   def index
     @children = Child.all
+
+    render json: @children.to_json(include: :user)
   end
 
   # GET /children/1
   # GET /children/1.json
   def show
+    render json: @child.to_json(include: :user)
   end
 
   # GET /children/new
@@ -69,6 +72,6 @@ class ChildrenController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def child_params
-      params.require(:child).permit(:name, :status, :pictures, :documents)
+      params.require(:child).permit(:name, :status, :pictures, :documents, :user_id)
     end
 end
