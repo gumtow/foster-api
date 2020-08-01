@@ -44,15 +44,6 @@ class ChildrenController < ApplicationController
   # PATCH/PUT /children/1.json
   def update
     @child.update(child_params)
-    # respond_to do |format|
-    #   if @child.update(child_params)
-    #     format.html { redirect_to @child, notice: 'Child was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @child }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @child.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /children/1
